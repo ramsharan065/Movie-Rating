@@ -15,7 +15,6 @@ import com.lf.movie.auth.models.UserDao;
 /**
  * Servlet implementation class Login
  */
-@WebServlet("/login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,9 +28,9 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//show login page
-		String s = request.getServletContext().getContextPath();
-		System.out.println("servletcontext.contextpath   "+s);
-		System.out.println("request.contextpath     "+request.getContextPath());
+//		String s = request.getServletContext().getContextPath();
+//		System.out.println("servletcontext.contextpath   "+s);
+//		System.out.println("request.contextpath     "+request.getContextPath());
 		request.getRequestDispatcher("/pages/auth/login_form.jsp").forward(request, response);
 	}
 

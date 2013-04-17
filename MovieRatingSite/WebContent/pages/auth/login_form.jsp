@@ -15,8 +15,8 @@
 	<div id="body">
 		<div id="login">
 			<div id="loginForm">
-				<p>${pageContext.request.contextPath} is context path</p>
 				<form method="post" action="${pageContext.request.contextPath}/auth/login">
+					<p>Login Form</p>
 					<p>
 						<label>Username</label><br /> <input type="text" name="username"
 							placeholder="Username" />
