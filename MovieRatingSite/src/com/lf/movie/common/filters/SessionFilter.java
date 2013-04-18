@@ -8,19 +8,17 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet Filter implementation class AuthUserFilter
+ * Servlet Filter implementation class SessionFilter
  */
-public class AuthUserFilter implements Filter {
+@WebFilter("/SessionFilter")
+public class SessionFilter implements Filter {
 
     /**
      * Default constructor. 
      */
-    public AuthUserFilter() {
+    public SessionFilter() {
         // TODO Auto-generated constructor stub
     }
 
@@ -39,17 +37,7 @@ public class AuthUserFilter implements Filter {
 		// place your code here
 
 		// pass the request along the filter chain
-		HttpServletRequest req = (HttpServletRequest)request;
-		HttpServletResponse resp = (HttpServletResponse)response;
-		HttpSession session;
-		
-		session = req.getSession(false);
-		if(session==null || session.getAttribute("user")==null){
-			chain.doFilter(request, response);
-		}
-		else{
-			resp.sendRedirect(req.getContextPath()+"/app/home");
-		}
+		chain.doFilter(request, response);
 	}
 
 	/**
