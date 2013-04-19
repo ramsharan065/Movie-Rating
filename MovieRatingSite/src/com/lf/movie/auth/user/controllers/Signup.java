@@ -41,6 +41,17 @@ public class Signup extends HttpServlet {
 		String password = request.getParameter("password");
 		String rePassword = request.getParameter("rePassword");
 		//System.out.println(name+username+password+rePassword);
+		//check for empty
+		if(name.isEmpty() || username.isEmpty() || password.isEmpty()){
+			//getServletContext().setAttribute("name", name);
+			request.setAttribute("name", name);
+			request.setAttribute("username", username);
+			//getServletContext().setAttribute("username", username);
+			//response.sendRedirect(request.getContextPath()+"/auth/signup");
+			request.getRequestDispatcher("/pages/auth/signup_form.jsp").forward(request, response);
+			return;
+		}
+		
 		
 		if(password.equals(rePassword)){
 			UserDao dao = new UserDao();

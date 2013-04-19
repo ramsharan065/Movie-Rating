@@ -14,9 +14,11 @@
 	</div>
 	<div id="body">
 		<div id="login">
-			<div id="loginForm">
+			<div id="loginForm" style="">
 				<form method="post" action="${pageContext.request.contextPath}/auth/login">
 					<p>Login Form</p>
+					<loginError type="empty">some fields are empty</loginError>
+					<loginError type="not_matched">Username or password is not matched</loginError>
 					<p>
 						<label>Username</label><br /> <input type="text" name="username"
 							placeholder="Username" />

@@ -28,6 +28,7 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//show login page
+		//test
 //		String s = request.getServletContext().getContextPath();
 //		System.out.println("servletcontext.contextpath   "+s);
 //		System.out.println("request.contextpath     "+request.getContextPath());

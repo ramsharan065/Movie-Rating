@@ -21,11 +21,11 @@
 						<p>Signup Form</p>
 						<p>
 							<label>Full Name</label><br /> <input type="text" name="name"
-								placeholder="Full Name" />
+								placeholder="Full Name" value="${name }" />
 						</p>
 						<p>
 							<label>Username</label><br /> <input type="text" name="username"
-								placeholder="Username" />
+								placeholder="Username" value="${username }" />
 						</p>
 						<p>
 							<label>Password</label><br /> <input type="password"
