@@ -27,6 +27,7 @@ public class Home extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("may be "+request.getRequestURL());
 		request.getRequestDispatcher("/pages/app/home.jsp").forward(request, response);
 	}
 

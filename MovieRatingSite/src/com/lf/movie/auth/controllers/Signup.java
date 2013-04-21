@@ -1,4 +1,4 @@
-package com.lf.movie.auth.user.controllers;
+package com.lf.movie.auth.controllers;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lf.movie.auth.user.models.UserDao;
+import com.lf.movie.auth.models.UserDao;
 
 /**
  * Servlet implementation class Signup

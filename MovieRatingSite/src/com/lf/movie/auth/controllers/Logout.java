@@ -1,4 +1,4 @@
-package com.lf.movie.auth.user.controllers;
+package com.lf.movie.auth.controllers;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

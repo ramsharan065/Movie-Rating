@@ -12,15 +12,15 @@
   </welcome-file-list>
   <servlet>
     <servlet-name>login</servlet-name>
-    <servlet-class>com.lf.movie.auth.user.controllers.Login</servlet-class>
+    <servlet-class>com.lf.movie.auth.controllers.Login</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>signup</servlet-name>
-    <servlet-class>com.lf.movie.auth.user.controllers.Signup</servlet-class>
+    <servlet-class>com.lf.movie.auth.controllers.Signup</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>logout</servlet-name>
-    <servlet-class>com.lf.movie.auth.user.controllers.Logout</servlet-class>
+    <servlet-class>com.lf.movie.auth.controllers.Logout</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>home</servlet-name>

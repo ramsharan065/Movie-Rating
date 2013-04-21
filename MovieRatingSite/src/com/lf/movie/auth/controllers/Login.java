@@ -1,16 +1,15 @@
-package com.lf.movie.auth.user.controllers;
+package com.lf.movie.auth.controllers;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.lf.movie.auth.user.models.UserDao;
+import com.lf.movie.auth.dto.User;
+import com.lf.movie.auth.models.UserDao;
 
 /**
  * Servlet implementation class Login
@@ -28,10 +27,6 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//show login page
-		//test
-//		String s = request.getServletContext().getContextPath();
-//		System.out.println("servletcontext.contextpath   "+s);
-//		System.out.println("request.contextpath     "+request.getContextPath());
 		request.getRequestDispatcher("/pages/auth/login_form.jsp").forward(request, response);
 	}
 
@@ -42,23 +37,34 @@ public class Login extends HttpServlet {
 		//validate user
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		String s = request.getServletContext().getContextPath();
-		System.out.println("servletcontext.contextpath   "+s);
-		System.out.println("request.contextpath     "+request.getContextPath());
+		//check for empty fields
+		if(username.isEmpty() || password.isEmpty()){
+			request.setAttribute("username", username);
+			request.setAttribute("error", "empty");
+			request.getRequestDispatcher("/pages/auth/login_form.jsp").forward(request, response);
+			return;
+		}
 		try{
 			UserDao dao = new UserDao();
-			Boolean isValidUser = dao.isValidUser(username, password);
-			if(isValidUser){
+			User user = dao.getUser(username, password);
+			if(user==null){
+				request.setAttribute("username", username);
+				request.setAttribute("error", "not_matched");
+				request.getRequestDispatcher("/pages/auth/login_form.jsp").forward(request, response);
+			}else{
 				HttpSession session = request.getSession();
-				session.setAttribute("user", new Integer(dao.getUserId()));
-				response.sendRedirect(request.getContextPath()+"/app/home");
-				//System.out.println("login in");
-			}
-			else{
-				response.sendRedirect(request.getContextPath()+"/auth/login");
+				session.setAttribute("user", user);
+				if(user.getRole().equals("user")){
+					response.sendRedirect(request.getContextPath()+"/app/home");
+				}else if(user.getRole().equals("admin")){
+					//TODO it should be redirect to admin dashboard
+					System.out.println("redirecting to admin dashboard");
+					response.sendRedirect(request.getContextPath()+"/app/home");
+				}
+				
 			}
 		}catch(Exception e){
-			response.sendRedirect("login");
+			response.sendRedirect(request.getContextPath()+"/app/home");
 			e.printStackTrace();
 		}
 		
