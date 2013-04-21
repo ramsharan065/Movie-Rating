@@ -27,7 +27,7 @@ public class UserDao {
 	}
 
 	public boolean addUser(String name, String username, String password) {
-		String insertUser = "INSERT INTO user(name,username, password) VALUES(?,?,?)";
+		String insertUser = "INSERT INTO user(name,username, password,role_id) VALUES(?,?,?,1)";
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(insertUser);

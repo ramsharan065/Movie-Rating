@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="m" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -19,7 +20,15 @@
 					<form method="post"
 						action="${pageContext.request.contextPath}/auth/signup">
 						<p>Signup Form</p>
+<%-- 						<m:authError type="empty">some fields are empty</m:authError> --%>
+<%-- 						<m:authError type="invalid_username">username is invalid</m:authError> --%>
+<%-- 						<m:authError type="password_length">password length should be atleast 6</m:authError> --%>
+<%-- 						<m:authError type="passwords_not_matched">passwords not matched</m:authError> --%>
+						<m:authError type="invalid_input">some fields are empty or have invalid inputs</m:authError>
+						<m:authError type="username_already_exists">the username already exists</m:authError>
+						
 						<p>
+							<span>All fields are required</span><br/>
 							<label>Full Name</label><br /> <input type="text" name="name"
 								placeholder="Full Name" value="${name }" />
 						</p>

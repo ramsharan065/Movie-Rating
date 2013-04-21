@@ -61,13 +61,10 @@ public class Login extends HttpServlet {
 					System.out.println("redirecting to admin dashboard");
 					response.sendRedirect(request.getContextPath()+"/app/home");
 				}
-				
 			}
 		}catch(Exception e){
 			response.sendRedirect(request.getContextPath()+"/app/home");
 			e.printStackTrace();
 		}
-		
 	}
-
 }
