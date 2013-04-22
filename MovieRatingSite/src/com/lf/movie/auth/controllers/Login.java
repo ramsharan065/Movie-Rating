@@ -1,8 +1,10 @@
 package com.lf.movie.auth.controllers;
 
 import java.io.IOException;
+import java.util.UUID;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,6 +39,7 @@ public class Login extends HttpServlet {
 		//validate user
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		String remember = request.getParameter("remember");
 		//check for empty fields
 		if(username.isEmpty() || password.isEmpty()){
 			request.setAttribute("username", username);
@@ -54,6 +57,14 @@ public class Login extends HttpServlet {
 			}else{
 				HttpSession session = request.getSession();
 				session.setAttribute("user", user);
+				//remember me
+				if(remember!=null || remember=="true"){
+					String token = UUID.randomUUID().toString();
+					Cookie cookie = new Cookie("token", token);
+					cookie.setMaxAge(60*60*24*7);
+					response.addCookie(cookie);
+					dao.setToken(user,token);
+				}
 				if(user.getRole().equals("user")){
 					response.sendRedirect(request.getContextPath()+"/app/home");
 				}else if(user.getRole().equals("admin")){

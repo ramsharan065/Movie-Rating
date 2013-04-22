@@ -36,7 +36,6 @@ public class UserDao {
 			ps.setString(3, password);
 			ps.executeUpdate();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
@@ -59,7 +58,40 @@ public class UserDao {
 						rs.getString("name"), rs.getString("role"));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return user;
+	}
+
+	public void setToken(User user, String token) {
+		String insertToken = "INSERT INTO auth_token(user_id, token) VALUES(?,?)";
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement(insertToken);
+			ps.setInt(1, user.getUserId());
+			ps.setString(2, token);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public User getUserFromToken(String token) {
+		User user = null;
+		String selectUser = "select u.id,u.name,u.username,r.role "
+				+ "from user u "
+				+ "join (select a.user_id from auth_token a where a.token=?) t on (t.user_id=u.id) "
+				+ "join role r on (r.id=u.role_id)";
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement(selectUser);
+			ps.setString(1, token);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				user = new User(rs.getInt("id"), rs.getString("username"),
+						rs.getString("name"), rs.getString("role"));
+			}
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return user;

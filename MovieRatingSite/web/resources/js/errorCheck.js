@@ -18,13 +18,16 @@ function loginValidate(){
 }
 
 function signupValidate(){
-	alert("he");
 	var name = document.forms["signupForm"]["name"].value;
 	var username = document.forms["signupForm"]["username"].value;
 	var password = document.forms["signupForm"]["password"].value;
 	var rePassword = document.forms["signupForm"]["rePassword"].value;
 	var error = false;
-	alert(name+username+password+rePassword);
+	//reset all error statements
+	document.getElementById("fullNameError").innerHTML = "";
+	document.getElementById("usernameError").innerHTML = "";
+	document.getElementById("passwordError").innerHTML = "";
+	document.getElementById("rePasswordError").innerHTML = "";
 	//for name
 	if(name==null || name==""){
 		error = true;

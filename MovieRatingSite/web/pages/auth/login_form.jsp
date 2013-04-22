@@ -32,6 +32,9 @@
 							<label>Password</label><br /> <input type="password"
 								name="password" placeholder="Password" /><span id="passwordError"></span>
 						</p>
+						<p>
+							<input type="checkbox" name="remember" value="true" /><label>Remember me</label>
+						</p>
 						<input id="submitButton" type="submit" value="login" />
 					</form>
 				</div>
