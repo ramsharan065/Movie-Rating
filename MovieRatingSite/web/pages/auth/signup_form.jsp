@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <LINK rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/style.css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/errorCheck.js"></script>
 <title>Movie Rating Site</title>
 </head>
 <body>
@@ -18,11 +19,10 @@
 			<div id="signup">
 				<div id="signupForm">
 					<form name="signupForm" method="post"
-						action="${pageContext.request.contextPath}/auth/signup">
+						action="${pageContext.request.contextPath}/auth/signup" onsubmit="return signupValidate();">
 						<p>Signup Form</p>
 						<m:onlyOne type="invalid_input">some fields are empty or have invalid inputs</m:onlyOne>
 						<m:onlyOne type="username_already_exists">the username already exists</m:onlyOne>
-						
 						<p>
 							<span>All fields are required</span><br/>
 							<label>Full Name</label><br /> <input type="text" name="name"
