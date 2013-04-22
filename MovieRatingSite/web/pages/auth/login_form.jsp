@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <LINK rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/style.css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/errorCheck.js"></script>
 <title>Movie Rating Site</title>
 </head>
 <body>
@@ -16,20 +17,20 @@
 		</div>
 		<div id="body">
 			<div id="login">
-				<div id="loginForm" style="">
-					<form method="post"
-						action="${pageContext.request.contextPath}/auth/login">
+				<div id="loginForm">
+					<form name="loginForm" method="post"
+						action="${pageContext.request.contextPath}/auth/login" onsubmit="return loginValidate();">
 						<p>Login Form</p>
-						<m:authError type="empty">some fields are empty</m:authError>
-						<m:authError type="not_matched">Username or password is not matched</m:authError>
+						<m:onlyOne type="empty">some fields are empty</m:onlyOne>
+						<m:onlyOne type="not_matched">Username or password is not matched</m:onlyOne>
 						<p>
 							<label>Username</label><br /> <input type="text" name="username"
 								placeholder="Username" value="${username }"
-								autofocus="autofocus" autocomplete="on" />
+								autofocus="autofocus" autocomplete="on" /><span id="usernameError"></span>
 						</p>
 						<p>
 							<label>Password</label><br /> <input type="password"
-								name="password" placeholder="Password" />
+								name="password" placeholder="Password" /><span id="passwordError"></span>
 						</p>
 						<input id="submitButton" type="submit" value="login" />
 					</form>
