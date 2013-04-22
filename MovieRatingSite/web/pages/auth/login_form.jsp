@@ -8,29 +8,32 @@
 <title>Movie Rating Site</title>
 </head>
 <body>
-<div id="main">
-	<div id="header">
-		<div id="logo">Movie Rating</div>
-	</div>
-	<div id="body">
-		<div id="login">
-			<div id="loginForm">
-				<form method="post" action="${pageContext.request.contextPath}/auth/login">
-					<p>Login Form</p>
-					<p>
-						<label>Username</label><br /> <input type="text" name="username"
-							placeholder="Username" />
-					</p>
-					<p>
-						<label>Password</label><br /> <input type="password"
-							name="password" placeholder="Password" />
-					</p>
-					<input id="submitButton" type="submit" value="login" />
-				</form>
-			</div>
-		</div>
-	</div>
-	<div id="footer"></div>
-	</div>
+<div id="wrapper">
+    <div id="header"></div>
+    <div id="container">
+       <div id="misc">
+           <form method="post" action="${pageContext.request.contextPath}/auth/login">
+               <p>Login Form</p>
+               <p>
+                   <label>Username</label><br /> <input type="text" name="username"
+                                                        placeholder="Username" />
+               </p>
+               <p>
+                   <label>Password</label><br /> <input type="password"
+                                                        name="password" placeholder="Password" />
+               </p>
+               <input id="submitButton" type="submit" value="login" />
+           </form>
+
+
+
+       </div>
+
+
+        <div>
+    <div id="footer"></div>
+ </div>
+
+
 </body>
 </html>

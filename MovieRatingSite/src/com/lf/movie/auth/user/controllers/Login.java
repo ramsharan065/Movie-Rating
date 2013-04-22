@@ -51,6 +51,7 @@ public class Login extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("user", new Integer(dao.getUserId()));
 				response.sendRedirect(request.getContextPath()+"/app/home");
+
 				//System.out.println("login in");
 			}
 			else{
