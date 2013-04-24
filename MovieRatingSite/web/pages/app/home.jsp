@@ -6,8 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Movie Rating</title>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/errorCheck.js"></script>
     <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" type="text/css" />
-
 
 
 
@@ -27,27 +27,66 @@
       <div id="banner">
 
               <div id="searchBar">
-                  <form class="form-search">
-                      <div class="input-append">
-                          <input type="text" class="span2 search-query">
-                          <button type="submit" class="btn">Search</button>
-                      </div>
 
-          </form>
+                  <form action="" enctype="multipart/form-data" id="">
+                      <input type="text" id="search" placeholder="Movie,Actors" value="Movie,Actors..">
+                      <input type="submit" value="Search" title="Search">
+
+
+                  </form>
+
+
                   </div>
+
+          <div id="profile">
+              <m:onlyOne type="admin">
+                  ${user.name};
+                  <a href="register"><input type="button" value="DASHBARD" name="ashboard" id="dashboard"></a>
+                 <a href="logout" ><input type="button" value="LOGOUT" name="logout" id="logoutadmin"></a></m:onlyOne>
+              <m:onlyOne type="user">
+                  ${user.name};
+
+                  <a href="login"><input type="button" value="LOGOUT" name="logout" id="logout"></a>  </m:onlyOne>
+              <m:onlyOne type="guest">
+
+                  <a href="login"><input type="button" value="LOGIN" name="login" id="login"></a>
+                  <a href="register"><input type="button" value="REGISTER" name="register" id="register"></a>
+
+
+              </m:onlyOne> </div>
 
       </div>
 
   </div>
    <div id="nav">
-       <ul class="navi">
-           <li><a href="#">Home</a></li>
-           <li><a href="#">Latest</a></li>
-           <li><a href="#">Top</a></li>
-           <li><a href="#">Category</a></li>
-           <li class="li1"><a href="#">Contact Us</a></li>
-       </ul>
-
+       <nav class="mainNav">
+           <ul class="cf">
+               <li class="navs current cf"><a href="index.html">Home</a></li>
+               <li class="navs cf">
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Genre</a>
+                   <!-- sub menu -->
+                   <ul class="sub-menu dropdown-menu cf" role="menu">
+                       <li><a href="#">Action</a></li>
+                       <li><a href="#">Comedy</a></li>
+                       <li><a href="#">SUspense</a></li>
+                       <li><a href="#">Thriller</a></li>
+                       <li><a href="#">Fiction</a></li>
+                   </ul>
+               </li>
+               <li class="navs cf"><a href="#">Gallery</a></li>
+               <li class="navs cf">
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Movies</a>
+                   <!-- sub menu -->
+                   <ul class="sub-menu dropdown-menu cf" role="menu">
+                       <li><a href="#">ENglish</a></li>
+                       <li><a href="#">Hindi</a></li>
+                       <li><a href="#">Nepali</a></li>
+                       <li><a href="#">Korean</a></li>
+                       <li><a href="#">Misc</a></li>
+                   </ul>
+               </li>
+           </ul>
+       </nav>
 
 
 
@@ -376,10 +415,7 @@
 
 
 
-<h1><br/>${((user.role eq null)?"guest":user.role) }</h1>
-<m:onlyOne type="admin">i am admin</m:onlyOne>
-<m:onlyOne type="user">i am user</m:onlyOne>
-<m:onlyOne type="guest">i am guest</m:onlyOne>
+
 
 </body>
 </html>

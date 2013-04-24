@@ -19,32 +19,6 @@ ul{
     background-color:#0a2b43;
 
 }
-#searchBar {
-    display: inline-block;
-    margin-left: 20px;
-    margin-top: 20px;
-    vertical-align: top;
-    align:center;
-
-}
-
-#searchBar .searchBox {
-    background-color: #FFFFFF;
-    border-radius: 5px 5px 5px 5px;
-    padding-left: 5px;
-    position: relative;
-
-}
-
-#searchBar input {
-    border-style: hidden;
-    border-width: 0;
-    color: #666666;
-    font: 12px Arial,Helvetica,sans-serif;
-    margin: 0;
-    padding: 6px 0 5px 5px;
-    width: 191px;
-}
 
 
 #logo
@@ -74,39 +48,120 @@ ul{
     background-color:#0a2b43;
 
 }
+#searchBar {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 10px;
+    vertical-align: top;
+    align:center;
+    float: left;
+}
+
+
+
+
+#searchBar input[type="text"]{
+    border-style: hidden;
+    border-width: 0;
+    height: 25px;
+    color: #666666;
+    font: 12px Arial,Helvetica,sans-serif;
+    margin: 0;
+    padding: 6px 0 5px 5px;
+    width: 190px;
+    font-size: 17px;
+
+    border-radius: 3px;
+}
+#searchBar input[type="submit"]{
+    border-style: hidden;
+    background-color: #b22222;
+    border-width: 0;
+    height: 38px;
+    color: #ffffe0;
+    font: 12px Arial,Helvetica,sans-serif;
+    margin: 0;
+    padding: 4px 0 5px 5px;
+    width: 120px;
+    font-size: 17px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+#profile{
+   border-left-color: #b22222;
+    margin-right: -35px;
+    height: 150px;
+    float: right;
+    width: 300px;
+    margin-top:10px;
+    position: relative;
+
+}
+#profile input[type="button"] {
+    background-color: #B22222;
+    border-radius: 4px 4px 4px 4px;
+    border-style: hidden;
+    border-width: 0;
+    color: #FFFFE0;
+    font: 17px Arial,Helvetica,sans-serif;
+    height: 38px;
+    margin: 0;
+    padding: 4px 0 5px 5px;
+    text-align: center;
+    width: 120px;}
+#profile input[type="button"]:hover {
+    background-color: green;
+    border-radius: 4px 4px 4px 4px;
+    border-style: hidden;
+    border-width: 0;
+    color: #FFFFE0;
+    font: 17px Arial,Helvetica,sans-serif;
+    height: 38px;
+    margin: 0;
+    padding: 4px 0 5px 5px;
+    text-align: center;
+    width: 120px;}
+#profile a
+{
+    text-decoration: none;
+}
+#profile a:hover
+{
+    color: #cecece;
+}
+
+
+#user{
+
+    height: 150px;
+    float: right;
+    width: 300px;
+
+   }
+#admin
+{
+
+    height: 150px;
+    float: right;
+    width: 300px;
+}
+#guest{
+    background: #fff6d8;
+    height: 150px;
+    float: right;
+    width: 300px;
+
+
+
+}
+
+
+
 #nav{
     width: 1024px;
-    height: 30px;
+    height: 57px;
     background-color: #f5f5dc;
-}
-#nav ul.navi{
-    width:491px; display:block; position:absolute;  padding:0; margin:0; background:none;
-}
-#nav ul.navi li{
-    background:url("../images/saparation.gif") no-repeat right;
-    height:22px;
-    padding:0 14px 0 5px;
-    margin:0;
-    display:block;
-    float:left;
-}
-#nav ul.navi li.li1{
-    background:none; height:22px; padding:0 14px 0 5px; margin:0;
-    display:block;  float:left;
-}
-nav ul.navi li a{
-    font:12px/21px "Trebuchet MS", Arial, Helvetica, sans-serif;
-    color:#847543;
-    text-decoration:none;
-    text-indent:0px;
-    padding:0 0 0 15px;
-    font-weight:bold;
-    margin:0;
-    width:inherit;
-    background-color:#fff6d8;
-}
-#nav ul.navi li a:hover{
-    background:url("../images/navi_h.gif") no-repeat 0 2px;
 }
 
 
@@ -292,7 +347,7 @@ nav ul.navi li a{
     padding: 10px;
     margin-right: 6px;
     margin-left: 15px;
-    margin: 5px 4px 9px 2px;
+    margin: -2px 4px 9px 2px;
 
 
 
@@ -321,7 +376,7 @@ nav ul.navi li a{
     text-align: center;
      background-color: #b22222;
     height: 26px;
-    border-radius: 4px;
+    margin-top: 1px;
 
 }
 
@@ -504,6 +559,34 @@ nav ul.navi li a{
     line-height: 10px;
     height: 10px;
 }
+/* required css */
+.navs {float:left; position:relative; margin:0; padding:0;}
+.sub-menu {list-style:none; position:absolute; z-index:100; display: none;width: 100px;}
+.sub-menu li a {display:block; padding:10px; color:#fff; margin:0; height:auto;}
+.current, .navs a:hover, .activeHover, .mainNav .open {background:#000000; background:url("../images/navi_h.gif") no-repeat 0 2px; }
+
+/* important for dropdown hover */
+a.menu:after, .dropdown-toggle:after {content: none;}
+.mainNav .navs:hover .sub-menu {display: block;}
+
+/* custom css */
+.mainNav {background:#000000; display:block; border-radius:8px; margin:0px 0 0 0; box-shadow:0px 54px 60px #b22222 inset; padding:0; border-radius:8px;}
+.mainNav ul {padding:0; margin:0;}
+.navs a {display:block; color:#fff; text-shadow:0 1px 0 #000; text-decoration:none; padding:20px 30px 0 30px; height:37px; font-size:17px; border-right:1px solid #000; border-left:1px solid #777;}
+.sub-menu {background:#0a2b43; list-style:none; position:absolute; z-index:100; box-shadow:1px 1px 3px #cecece; border-radius:0 0 5px 5px; padding:0; margin:0;}
+.sub-menu li a {text-shadow:0 1px 0 #000; font-size:12px; border-left:none; border-right:none; border-bottom:1px solid #000; border-top:1px solid #777;}
+.mainNav .navs:first-child {border-radius:8px 0 0 8px;}
+.mainNav .navs:last-child {border-radius:0 8px 8px 0;}
+.mainNav .navs a.homeLink {border-radius:8px 0 0 8px; border-left:none;}
+.mainNav .navs a.lastLink {border-radius:0; border-right:none;}
+.mainNav .sub-menu li a.innerLinkFirst {border-top:none;}
+.mainNav .sub-menu li a.innerLinkLast {border-bottom:none; border-radius:0 0 5px 5px;}
+
+/* Micro Clear Fix For modern browsers */
+.cf:before,.cf:after{content:"";display:table;}
+.cf:after{clear:both;}
+/* For IE 6/7 (trigger hasLayout) */
+.cf{zoom:1;}
 
 
 

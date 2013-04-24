@@ -68,3 +68,35 @@ function signupValidate(){
 	}
 	return (!error);
 }
+var mainNav = $('.navs'),
+    dropDownLink = $('a[data-toggle=dropdown]');
+mainNav.each(function() {
+    if ($(this).is(':first-child')) {
+        $(this).find('a').addClass('homeLink');
+    } else if ($(this).is(':last-child')) {
+        $(this).find('a').addClass('lastLink');
+    }
+});
+$('.sub-menu li').each(function() {
+    if ($(this).is(':first-child')) {
+        $(this).find('a').addClass('innerLinkFirst');
+    } else if ($(this).is(':last-child')) {
+        $(this).find('a').addClass('innerLinkLast');
+    }
+    $(this).hover(function() {
+        $(this).parent().parent().addClass('open');
+    }, function() {
+        $(this).parent().parent().removeClass('open');
+    });
+});
+dropDownLink.dropdown();
+dropDownLink.each(function() {
+    mainNavWidth = $(this).parent().width() - 2,
+        mainNavSub = $(this).parent().find('.sub-menu');
+    mainNavSub.css({'width': mainNavWidth});
+    $(this).append('<span class=\"arrow\" />');
+    $(this).click(function() {
+        var thisUrl = $(this).attr('href');
+        window.location = thisUrl;
+    });
+});
