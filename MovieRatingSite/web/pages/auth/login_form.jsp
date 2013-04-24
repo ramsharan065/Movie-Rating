@@ -11,14 +11,12 @@
 <title>Movie Rating Site</title>
 </head>
 <body>
-	<div id="main">
-		<div id="header">
-			<div id="logo">Movie Rating</div>
-		</div>
-		<div id="body">
-			<div id="login">
-				<div id="loginForm">
-					<form name="loginForm" method="post"
+
+<div id="wrapper">
+    <div id="header"></div>
+    <div id="container">
+       <div id="misc">
+           <form name="loginForm" method="post"
 						action="${pageContext.request.contextPath}/auth/login" onsubmit="return loginValidate();">
 						<p>Login Form</p>
 						<m:onlyOne type="empty">some fields are empty</m:onlyOne>
@@ -37,10 +35,15 @@
 						</p>
 						<input id="submitButton" type="submit" value="login" />
 					</form>
-				</div>
-			</div>
-		</div>
-		<div id="footer"></div>
-	</div>
+
+
+
+       </div>
+
+
+        <div>
+    <div id="footer"></div>
+ </div>
+
 </body>
 </html>
