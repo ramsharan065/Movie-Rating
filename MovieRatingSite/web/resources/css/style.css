@@ -7,7 +7,7 @@ ul{
  #wrapper
  {
      width: 1024px;
-     height:800px;
+     height:930px;
 
      background-color:#0a2b43;
      color:#fff6d8;
@@ -114,14 +114,14 @@ nav ul.navi li a{
 #container
 {
     width: 1024px;
-    height: 580px;
+    height: 717px;
    background-color:#0a2b43;
 
 }
 
 #container #left{
     width: 812px;
-    height: 580px;
+    height: 717px;
     background-color:#0a2b43;
     float: left;
 
@@ -130,7 +130,7 @@ nav ul.navi li a{
 #container #left #rank
 {
     width: 212px;
-    height:580px;
+    height:717px;
     background-color:#0a2b43;
     float: left;
 }
@@ -142,7 +142,7 @@ nav ul.navi li a{
 #ranktable td, #ranktable th
 {
     font-size:1em;
-    border:1px solid #0a2b43;
+    border:1px solid #000000;
     padding:3px 7px 2px 3px;
 }
 #ranktable th
@@ -196,7 +196,8 @@ nav ul.navi li a{
 
 }
 #rank #nextchange #rate{
-    height: 50px;
+    height: 100px;
+    margin-top: 35px;
     font: 12px;
     width: 212px;
     margin-left: 4px;
@@ -208,13 +209,17 @@ nav ul.navi li a{
     margin-top: -32px;
 
 }
+#rank #nextchange #rate a{
+    color: #FFFFFF;
 
+
+}
 
 
 #container #left #misc
 {
     width: 600px;
-    height:580px ;
+    height:717px ;
     background-color:#0a2b43;
     float: right;
     border-left: 2px;
@@ -223,13 +228,197 @@ nav ul.navi li a{
     border-right-color: #b22222;
 
 }
+#container #left #misc #hotapple{
+    background: url("/resources/images/lcd.jpg") no-repeat;
+    width: 600px;
+    height: 316px;
+    margin-top: 4px;
+    border-radius: 2px;
+    background-color: #ffffe0;
+    border: 1px solid #D6D6D6;
+    margin-bottom: 5px;
+    padding: 10px;
+    margin-right: 6px;
+    margin-left: 15px;
+    margin: 5px 4px 9px 2px;
+
+    
+
+}
+#container #left #misc #hotapple table{
+    padding:5px 3px 4px 1px;
+    border-spacing: 16px 1px;
+    border: 1px;
+    border-radius: 9px 9px 9px 9px;
+    background-color: #ffffe0;
+    opacity: 1;
+    margin-top: 5px;
+    margin-left: 8px;
+}
+
+
+.caption
+{
+    width: 160px;;
+    position: absolute;
+    bottom: 4px;
+    text-decoration-color: #000000;
+    text-align: center;
+    left: 0px;
+    font-family: monospace;
+    font-size: 14px;
+    background-color: #0a2b43;
+    color:#ffffff;
+
+}
+.prel
+{
+    position: relative;
+
+}
+
+
+
+#container  #left #misc #rotapple
+{
+    background: url("/resources/images/lcd.jpg") no-repeat;
+    width: 600px;
+    height: 316px;
+    margin-top: 4px;
+    border-radius: 2px;
+    background-color: #ffffe0;
+    border: 1px solid #D6D6D6;
+    margin-bottom: 5px;
+    padding: 10px;
+    margin-right: 6px;
+    margin-left: 15px;
+    margin: 5px 4px 9px 2px;
+
+
+
+}
+#container #left #misc #rotapple table{
+    padding:5px 3px 4px 1px;
+    border-spacing: 16px 1px;
+    border: 1px;
+    border-radius: 9px 9px 9px 9px;
+    background-color: #ffffe0;
+    opacity: 1;
+    margin-top: 5px;
+    margin-left: 8px;
+}
+
+
+
+
+
+
+
+#container #left #misc h4{
+    width: 600px;
+    -moz-border-radius: 2em;
+    font-stretch: condensed;
+    text-align: center;
+     background-color: #b22222;
+    height: 26px;
+    border-radius: 4px;
+
+}
+
+
  #container #right{
       width: 212px;
-      height:580px;
+      height:717px;
      background-color:#0a2b43;
      float: right;
 
  }
+
+#right #ranktableright
+{
+    width: 212px;
+    border-collapse:collapse;
+}
+
+#ranktableright td, #ranktableright th
+{
+    font-size:1em;
+    border:1px solid #000000;
+    padding:3px 7px 2px 3px;
+}
+#ranktableright th
+{
+    font-size:1em;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#b22222;
+    padding-left: 10px;
+    color:#ffffff;
+}
+#ranktableright tr.altright td
+{
+    color:#000000;
+    background-color:#ffffe0;
+}
+
+
+
+
+#right #nextchangeright
+{
+    width: 212px;
+    background-color: #0a2b43;
+    font-family: "Trebuchet MS";
+    -moz-border-radius: 5grad;
+    height: 233px;
+
+}
+#right #nextchangeright #upcomeright{
+    width: 212px;
+    background-color: #0a2b43;
+    height: 190px;
+}
+#right #nextchangeright #upcomeright img{
+    margin-left: 4px;
+    margin-top: 10px;
+    float: left;
+}
+#right #nextchangeright #upcomeright h4{
+
+    -moz-border-radius: 2em;
+    font-stretch: condensed;
+    text-align: center;
+    background-color: #b22222;
+
+}
+#right #nextchangeright #upcomeright h6{
+    font-size: 12px;
+
+    margin-top: 10px;
+
+
+}
+#right #nextchangeright #rateright{
+    height: 100px;
+    margin-top: 35px;
+    font: 12px;
+    width: 212px;
+    margin-left: 4px;
+}
+#right #nextchangeright #rateright img{
+    float: right;
+    margin-right: 6px;
+    border-radius: 4px;
+    margin-top: -32px;
+
+}
+#right #nextchangeright #rateright a{
+    color: #FFFFFF;
+
+
+}
+
 /*             styles for the star rater                */
 .star-rating,
 .star-rating a:hover,
@@ -321,10 +510,11 @@ nav ul.navi li a{
 #footer
  {
      width: 1024px;
-     height: 40px;
+     height: 80px;
      background-color: #b22222;
      text-align: center;
-     margin-top: 5px;
-     -moz-border-bottom-colors: #7fff00;
+    margin-left: 0px;
+
+
 
  }
