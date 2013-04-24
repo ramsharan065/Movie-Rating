@@ -40,18 +40,25 @@
 
           <div id="profile">
               <m:onlyOne type="admin">
-                  ${user.name}
-                  <a href="register"><input type="button" value="DASHBARD" name="ashboard" id="dashboard"></a>
-                 <a href="logout" ><input type="button" value="LOGOUT" name="logout" id="logoutadmin"></a></m:onlyOne>
+
+              <div class="userChoose">
+                 <a href="${pageContext.request.contextPath }/auth/logout" ><input type="button" value="LOGOUT" name="logout" id="logoutadmin"></a>
+                  <a href="register"><input type="button" value="DASHBARD" name="dashboard" id="dashboard"></a>
+              </div><br/>
+                 ${user.name}
+                 </m:onlyOne>
               <m:onlyOne type="user">
-                  ${user.name}
+              <div class="userChoose">
+              <a href="${pageContext.request.contextPath }/auth/logout"><input type="button" value="LOGOUT" name="logout" id="logout"></a>
+              </div><br/>
+              ${user.name}
+              </m:onlyOne>
 
-                  <a href="logout"><input type="button" value="LOGOUT" name="logout" id="logout"></a>  </m:onlyOne>
               <m:onlyOne type="guest">
-
-                  <a href="login"><input type="button" value="LOGIN" name="login" id="login"></a>
-                  <a href="register"><input type="button" value="REGISTER" name="register" id="register"></a>
-
+				<div class="userChoose">
+				<a href="${pageContext.request.contextPath }/auth/signup"><input type="button" value="REGISTER" name="register" id="register"></a>
+                  <a href="${pageContext.request.contextPath }/auth/login"><input type="button" value="LOGIN" name="login" id="login"></a>
+				</div>
 
               </m:onlyOne> </div>
 
