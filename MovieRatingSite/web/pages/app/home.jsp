@@ -40,13 +40,13 @@
 
           <div id="profile">
               <m:onlyOne type="admin">
-                  ${user.name};
+                  ${user.name}
                   <a href="register"><input type="button" value="DASHBARD" name="ashboard" id="dashboard"></a>
                  <a href="logout" ><input type="button" value="LOGOUT" name="logout" id="logoutadmin"></a></m:onlyOne>
               <m:onlyOne type="user">
-                  ${user.name};
+                  ${user.name}
 
-                  <a href="login"><input type="button" value="LOGOUT" name="logout" id="logout"></a>  </m:onlyOne>
+                  <a href="logout"><input type="button" value="LOGOUT" name="logout" id="logout"></a>  </m:onlyOne>
               <m:onlyOne type="guest">
 
                   <a href="login"><input type="button" value="LOGIN" name="login" id="login"></a>
