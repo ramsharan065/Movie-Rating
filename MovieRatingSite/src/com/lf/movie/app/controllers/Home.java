@@ -28,6 +28,12 @@ public class Home extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//System.out.println("may be "+request.getRequestURL());
+		//String purl = (String)request.getAttribute("javax.servlet.forward.request_uri");
+		String ss = request.getHeader("Referer");
+		if(ss!=null){
+		int length = (request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()).length();
+		System.out.println(request.getHeader("Referer").substring(length)+ " is the previous link");
+		}
 		request.getRequestDispatcher("/pages/app/home.jsp").forward(request, response);
 	}
 

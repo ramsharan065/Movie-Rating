@@ -55,7 +55,7 @@ public class Signup extends HttpServlet {
 		if(password.equals(rePassword)){
 			UserDao dao = new UserDao();
 			if(dao.addUser(name, username, password)==true){
-				//TODO show signup successfull page and give link to login page or home
+				response.sendRedirect(request.getContextPath()+"/app/home");
 				System.out.println("signup successful");
 			}
 			else{
