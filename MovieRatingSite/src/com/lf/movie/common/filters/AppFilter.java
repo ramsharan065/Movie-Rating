@@ -10,21 +10,20 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.lf.movie.auth.dto.User;
 import com.lf.movie.auth.models.UserDao;
 
 /**
- * Servlet Filter implementation class UserFilter
+ * Servlet Filter implementation class AppFilter
  */
-public class UserFilter implements Filter {
+public class AppFilter implements Filter {
 
 	/**
 	 * Default constructor.
 	 */
-	public UserFilter() {
+	public AppFilter() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -40,8 +39,10 @@ public class UserFilter implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
+		// TODO Auto-generated method stub
+		// place your code here
 		HttpServletRequest req = (HttpServletRequest) request;
-		HttpServletResponse resp = (HttpServletResponse) response;
+		// HttpServletResponse resp = (HttpServletResponse) response;
 		HttpSession session;
 
 		session = req.getSession(false);
@@ -54,6 +55,7 @@ public class UserFilter implements Filter {
 			}
 			String token = null;
 			for (Cookie c : cookies) {
+				System.out.println(c.getName() + "app cookie");
 				if (c.getName().equals("token")) {
 					token = c.getValue();
 					break;
@@ -65,30 +67,10 @@ public class UserFilter implements Filter {
 				if (tokenUser != null) {
 					session = req.getSession();
 					session.setAttribute("user", tokenUser);
-				} else {
-					System.out.println("Unauthorized request");
-					// TODO instead of redirecting to app home, it should be redirected
-					// to unauthorized page(you cannot access this page)
-					resp.sendRedirect(req.getContextPath() + "/app/home");
-					return;
 				}
-			} else {
-				System.out.println("Unauthorized request");
-				// TODO instead of redirecting to app home, it should be redirected
-				// to unauthorized page(you cannot access this page)
-				resp.sendRedirect(req.getContextPath() + "/app/home");
-				return;
 			}
 		}
-		User user = (User) session.getAttribute("user");
-		if (user.getRole().equals("admin") || user.getRole().equals("user")) {
-			chain.doFilter(request, response);
-		} else {
-			// TODO instead of redirecting to app home, it should be redirected
-			// to unauthorized page(you cannot access this page)
-			resp.sendRedirect(req.getContextPath() + "/app/home");
-		}
-
+		chain.doFilter(request, response);
 	}
 
 	/**

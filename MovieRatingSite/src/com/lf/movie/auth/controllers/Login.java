@@ -61,9 +61,11 @@ public class Login extends HttpServlet {
 				if(remember!=null || remember=="true"){
 					String token = UUID.randomUUID().toString();
 					Cookie cookie = new Cookie("token", token);
-					cookie.setMaxAge(60*60*24*7);
+					cookie.setMaxAge(60*60*24*30);
+					cookie.setPath(request.getContextPath()+"/");
 					response.addCookie(cookie);
-					dao.setToken(user,token);
+					user.setToken(token);
+					dao.setToken(user);
 				}
 				if(user.getRole().equals("user")){
 					response.sendRedirect(request.getContextPath()+"/app/home");

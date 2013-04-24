@@ -45,7 +45,7 @@ function signupValidate(){
 		document.getElementById("usernameError").innerHTML = "It should not be empty";
 	}else{
 		var regex = new RegExp("^[\\w]{1,50}$");
-		if(!regex.test(name)){
+		if(!regex.test(username)){
 			error = true;
 			document.getElementById("usernameError").innerHTML = "It can contain letter only";
 		}
@@ -55,8 +55,8 @@ function signupValidate(){
 		error = true;
 		document.getElementById("passwordError").innerHTML = "It should not be empty";
 	}else{
-		var regex = new RegExp("^[.]{6,50}$");
-		if(!regex.test(name)){
+		var regex = new RegExp("^.{6,50}$");
+		if(!regex.test(password)){
 			error = true;
 			document.getElementById("passwordError").innerHTML = "length should be atleast 6";
 		}

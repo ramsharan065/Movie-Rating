@@ -63,15 +63,27 @@ public class UserDao {
 		return user;
 	}
 
-	public void setToken(User user, String token) {
+	public void setToken(User user) {
 		String insertToken = "INSERT INTO auth_token(user_id, token) VALUES(?,?)";
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(insertToken);
 			ps.setInt(1, user.getUserId());
-			ps.setString(2, token);
+			ps.setString(2, user.getToken());
 			ps.executeUpdate();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public void removeToken(User user){
+		String deleteToken = "DELETE FROM auth_token WHERE token =?";
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement(deleteToken);
+			ps.setString(1, user.getToken());
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -90,6 +102,7 @@ public class UserDao {
 			if (rs.next()) {
 				user = new User(rs.getInt("id"), rs.getString("username"),
 						rs.getString("name"), rs.getString("role"));
+				user.setToken(token);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
