@@ -18,7 +18,7 @@
 				<p>${pageContext.request.contextPath} is context path</p>
 				<form method="post" action="${pageContext.request.contextPath}/auth/login">
 					<p>
-						<label>Username</label><br /> <input type="text" name="username"
+						<label>Username:</label><br /> <input type="text" name="username"
 							placeholder="Username" />
 					</p>
 					<p>

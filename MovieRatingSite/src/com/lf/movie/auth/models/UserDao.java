@@ -2,19 +2,21 @@ package com.lf.movie.auth.models;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class UserDao {
-	Connection conn = null;
-    String url = "jdbc:mysql://localhost:3306/";
-    String dbName = "movie_rating";
-    String driver = "com.mysql.jdbc.Driver";
-    String userName = "root"; 
-    String password = "";
-    Statement stat = null;
+	protected static Connection conn = null;
+    protected String url = "jdbc:mysql://localhost:3306/";
+    protected String dbName = "db_movie";
+    protected String driver = "com.mysql.jdbc.Driver";
+    protected String userName = "root"; 
+    protected String password = "";
+    protected Statement stat = null;
     int userId;
+    protected PreparedStatement preparedStatement;
     
     public UserDao(){
     	try{
