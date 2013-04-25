@@ -111,6 +111,7 @@ ul {
 	width: 120px;
 	float: right;
 	padding: 4px 0 5px 5px;
+
 }
 
 #profile input[type="button"]:hover {
@@ -174,6 +175,81 @@ ul {
 	background-color: #0a2b43;
 	float: left;
 }
+
+#container #left #moviepage{
+  width: 812px;
+  height: 717px;
+
+}
+#container #left #moviepage #movievideo{
+  margin: 5px;
+    float: left;
+
+
+}
+
+#container #left #moviepage img
+{
+    margin-left: 30px;
+    margin-top: 20px;
+
+    border: 2px ridge;
+
+}
+#container #left #moviepage h3{
+   text-align: center;
+    margin-top: 2px;
+    color: #fff6d8;
+
+}
+#container #left #moviepage #moviedesc{
+    width: 400px;
+    height: 600px;
+    background: url("/resources/images/curtain.jpg") no-repeat;
+   float: right;
+    margin-top: 30px;
+    margin-right: 31px;
+    opacity: 0.96;
+}
+#container #left #moviepage #moviedesc p{
+    color: #000000;
+    font-size: 13px;
+    margin-top: 30px;
+    margin-left: 40px;
+
+}
+#container #left #moviepage #moviedesc h4{
+    margin-top: 30px;
+    text-align: center;
+    color: #0a2b43;
+
+
+}
+#container #left #moviepage #moviedesc h5{
+
+
+    color: #ffffe0;
+    font-size: 18px;
+    margin-top: 45px;
+
+}
+
+#container #left #moviepage #moviedesc textarea{
+    width: 397px;   display: block;
+
+
+
+}
+#container #left #moviepage #moviedesc h6{
+
+    font-size: 13px;
+    color: #ffffe0;
+    font-weight:normal;
+    text-align: justify;
+
+
+}
+
 
 #container #left #rank {
 	width: 212px;
@@ -268,6 +344,73 @@ ul {
 	border-right: 2px;
 	border-right-color: #b22222;
 }
+#login{
+   height: auto;
+    border: #fff6d8;
+    max-width: 400px;
+
+    }
+#login label{
+    font-size: 18px;
+
+
+}
+
+#login p{
+    font-size: 18px;
+    margin-bottom: 2px;
+
+}
+#login input[type="submit"] {
+     background-color: #B22222;
+    border-radius: 4px 4px 4px 4px;
+    border-style: hidden;
+    border-width: 0;
+    color: #FFFFE0;
+    font: 17px Arial, Helvetica, sans-serif;
+    height: 38px;
+    margin: 6px -20px 6px 0px;
+     padding : 5px -25px 6px 0px;
+    text-align: center;
+    width: 220px;
+
+
+}
+
+
+#login input[type="text"] {
+
+    border-radius: 4px 4px 4px 4px;
+    border-style: hidden;
+    border-width: 0;
+
+    font: 17px Arial, Helvetica, sans-serif;
+    height: 38px;
+    margin: 6px 2px 6px 0px;
+    padding : 5px -25px 6px 0px;
+    text-align: center;
+    width: 220px;
+
+
+}
+#login input[type="password"] {
+
+    border-radius: 4px 4px 4px 4px;
+    border-style: hidden;
+    border-width: 0;
+
+    font: 17px Arial, Helvetica, sans-serif;
+    height: 38px;
+    margin: 6px 2px 6px 0px;
+    padding : 5px -18px 6px 0px;
+    text-align: center;
+    width: 220px;
+
+
+}
+
+
+
 
 #container #left #misc #hotapple {
 	background: url("../images/lcd.jpg") no-repeat;
@@ -447,6 +590,7 @@ ul {
 	margin: 0;
 	padding: 0;
 	background-position: left top;
+    display: inline-block;
 }
 
 .star-rating li {
