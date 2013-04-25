@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import com.lf.movie.auth.dto.User;
 
 public class UserDao {
+
 	Connection conn = null;
 	String url = "jdbc:mysql://localhost:3306/";
 	String dbName = "db_movie";
@@ -59,6 +60,7 @@ public class UserDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+
 		}
 		return user;
 	}
